@@ -5,8 +5,8 @@ from ldap3 import ALL, NTLM, Connection, Server
 
 class LDAPClient:
     def __init__(self, username: str, password: str):
-        self.AD_SERVERS = "CORP.CHARTERCOM.COM"
-        self.DOMAIN = "DC=CORP,DC=CHARTERCOM,DC=COM"
+        self.AD_SERVERS = "your domain here"
+        self.DOMAIN = "your domain here"
         self.AD_GROUP_FILTER = "(&(objectClass=USER)(memberOf={group}))"
         self.AD_USER_FILTER = "(&(objectClass=USER)(mail={email}))"
         self.AD_BIND_USER = username
@@ -14,7 +14,7 @@ class LDAPClient:
         self.conn = self.connect_to_server()
 
     def connect_to_server(self):
-        # tls_config = Tls(validate=ssl.CERT_REQUIRED, ca_certs_file=path)
+        tls_config = Tls(validate=ssl.CERT_REQUIRED, ca_certs_file=path)
         server = Server(self.AD_SERVERS, port=636, use_ssl=True, get_info=ALL)
         conn = Connection(server, user=f"{self.DOMAIN}\\{self.AD_BIND_USER}", password=self.AD_BIND_PWD, auto_bind=True, authentication=NTLM)
         return conn
