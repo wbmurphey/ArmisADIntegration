@@ -4,16 +4,17 @@ import ldap_client
 
 if __name__ == "__main__":
     # Defines groups that Armis will use for role assignment.
-    nsa = "CN=DL Advanced Engineering Security,OU=Distribution Lists,OU=Exchange55,DC=CORP,DC=CHARTERCOM,DC=com"
+    # dn_var = "DN for your group"
     group_roles = {
-        "Admin": [nsa],
+        # add dn_var to appropriate values for roles
+        "Admin": [],
         "Read Only": [],
         "Security Analyst": [],
         "Asset Manager": [],
         "Integrations Manager": [],
         "User Manager": [],
         "Alert Resolver": [],
-        "Full Advanced Permissions": [nsa],
+        "Full Advanced Permissions": [],
         "Policy Manager": [],
         "Read Only with Reports": [],
         "Read Write": [],
@@ -21,7 +22,7 @@ if __name__ == "__main__":
         }
     
     # Specifies the file from which configparser extracts AD credetials.
-    config_file = "C:/Users/P3060032/Documents/Armis/armis-ad-integration-project/ad.ini"
+    # config_file = "path to your config file"
     config = configparser.ConfigParser()
     config.read(config_file)
 
