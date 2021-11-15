@@ -4,9 +4,9 @@ import ldap_client
 
 if __name__ == "__main__":
     # Defines groups that Armis will use for role assignment.
-    # dn_var = "DN for your group"
+    dn_var = "DN for your group"
     group_roles = {
-        # add dn_var to appropriate values for roles
+        # Add dn_var to appropriate values for roles
         "Admin": [],
         "Read Only": [],
         "Security Analyst": [],
@@ -27,7 +27,7 @@ if __name__ == "__main__":
     config.read(config_file)
 
     # Specifies the AD group whose members will be added as Armis users, then connects to and queries the AD.
-    ad_group = nsa
+    ad_group = dn_var
     connection = ldap_client.LDAPClient(username=config["AD"]["username"], password=config["AD"]["password"])
     
     # Specifies the api key to use with the Armis API, establishes a connection with the API, and gets all current Armis users.
