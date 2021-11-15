@@ -22,11 +22,10 @@ password = <password here>
 ```
 
 ad_group should be a string specifying the Active Directory group you wish to manage with proper Active Directory syntax.
-The NSA Active Directory group is defined at the beginning of main.py for convienience.
 
 api_key should be a string containing only your Armis API key.
 
-Once these three variables are correctly defined, run main.py from a network on which CORP.CHARTERCOM.COM is reachable.
+Once these three variables are correctly defined, run main.py from a network on which your Active Directory domain is reachable.
 
 ## Expected Behavior
 
