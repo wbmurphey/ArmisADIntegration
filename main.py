@@ -31,8 +31,8 @@ if __name__ == "__main__":
     connection = ldap_client.LDAPClient(username=config["AD"]["username"], password=config["AD"]["password"])
     
     # Specifies the api key to use with the Armis API, establishes a connection with the API, and gets all current Armis users.
-    api_key = "a989a326222adeb1759fc02f9a2ec269ec7a1ed0ab15e94a0517c14208a54b7a"
-    base = "https://charterlab.armis.com"
+    api_key = "your api key here"
+    base = "https://url here"
     api_instance = armis_client.APIClient(base=base, api_key=api_key, verify=False)
     
     # Defines a function that will return a list of roles for a specified group.
